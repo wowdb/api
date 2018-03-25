@@ -15,22 +15,29 @@
   },
   "main": "index.js",
   "scripts": {
+    "dev": "nodemon --exec 'node -r dotenv/config' index.js",
     "coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov",
     "lint": "xo",
     "precommit": "lint-staged",
     "test": "npm run lint && npm run test-coverage",
     "test-coverage": "cross-env NODE_ENV=test nyc ava"
   },
-  "dependencies": {},
+  "dependencies": {
+    "cors": "^2.8.4",
+    "fastify": "^1.1.1",
+    "mongoose": "^5.0.11"
+  },
   "devDependencies": {
     "ava": "^0.22.0",
     "codecov": "^2.3.0",
     "cross-env": "^5.0.5",
+    "dotenv": "^5.0.1",
     "eslint": "^4.5.0",
     "eslint-config-prettier": "latest",
     "eslint-plugin-prettier": "latest",
     "husky": "^0.14.3",
     "lint-staged": "^4.0.4",
+    "nodemon": "^1.17.2",
     "nyc": "^11.1.0",
     "prettier": "^1.6.1",
     "xo": "latest"
