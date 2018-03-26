@@ -6,11 +6,11 @@ module.exports = {
   schema: results,
   url: '/search',
   async handler(request) {
-    const { query: { q } } = request
+    const { query: { query } } = request
 
-    const achievements = await Achievement.search(q)
-    const items = await Item.search(q)
-    const quests = await Quest.search(q)
+    const achievements = await Achievement.search(query)
+    const items = await Item.search(query)
+    const quests = await Quest.search(query)
 
     return {
       achievements,
