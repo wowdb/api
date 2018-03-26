@@ -14,7 +14,7 @@ schema.index({
 })
 
 class Achievement {
-  static search(query, skip = 0, limit = 20) {
+  static search(query, skip = 0, limit = 10) {
     return this.find({
       $text: {
         $search: query
