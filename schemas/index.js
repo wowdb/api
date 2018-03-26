@@ -1,5 +1,5 @@
-const items = require('./items')
+const search = require('./search')
 
 module.exports = {
-  items
+  search
 }
