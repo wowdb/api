@@ -1,12 +1,9 @@
-const Achievement = require('../models/achievement')
-const Item = require('../models/item')
-const Quest = require('../models/quest')
+const { Achievement, Item, Quest } = require('../models')
+const { results } = require('../schemas')
 
-const { search } = require('../schemas')
-
-const index = {
+module.exports = {
   method: 'GET',
-  schema: search,
+  schema: results,
   url: '/search',
   async handler(request) {
     const { query: { q } } = request
@@ -21,10 +18,4 @@ const index = {
       quests
     }
   }
-}
-
-module.exports = (fastify, opts, next) => {
-  fastify.route(index)
-
-  next()
 }

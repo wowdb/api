@@ -1,5 +1,5 @@
-const search = require('./search')
+const results = require('./results')
 
 module.exports = {
-  search
+  results
 }

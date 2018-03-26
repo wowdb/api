@@ -1,13 +1,9 @@
-const index = {
-  method: 'GET',
-  url: '/',
-  handler(request, reply) {
-    reply.redirect('https://designplox.com/bigglesworth/')
-  }
-}
+const home = require('./home')
+const search = require('./search')
 
-module.exports = (fastify, opts, next) => {
-  fastify.route(index)
+module.exports = (fastify, options, next) => {
+  fastify.route(home)
+  fastify.route(search)
 
   next()
 }
