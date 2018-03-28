@@ -4,7 +4,8 @@ const schema = new mongoose.Schema({
   id: Number,
   name: String,
   description: String,
-  icon: String
+  icon: String,
+  itemLevel: Number
 })
 
 schema.index({

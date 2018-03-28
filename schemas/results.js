@@ -39,6 +39,9 @@ module.exports = {
               },
               quality: {
                 type: 'string'
+              },
+              itemLevel: {
+                type: 'number'
               }
             }
           }
@@ -53,6 +56,9 @@ module.exports = {
               },
               title: {
                 type: 'string'
+              },
+              reqLevel: {
+                type: 'number'
               }
             }
           }
