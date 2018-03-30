@@ -1,10 +1,12 @@
-const { MONGO_URI, NODE_ENV, PORT } = process.env
+const { MONGO_URI, MONGO_DB, NODE_ENV, PORT } = process.env
 
 const cors = require('cors')()
 const fastify = require('fastify')()
 const mongoose = require('mongoose')
 
-mongoose.connect(MONGO_URI)
+mongoose.connect(MONGO_URI, {
+  dbName: MONGO_DB
+})
 mongoose.Promise = global.Promise
 
 fastify.use(cors)
