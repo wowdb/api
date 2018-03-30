@@ -14,15 +14,12 @@ schema.index({
 })
 
 class Quest {
-  static search(query, skip = 0, limit = 20) {
+  static search(query) {
     return this.find({
       $text: {
         $search: query
       }
-    })
-      .skip(skip)
-      .limit(limit)
-      .exec()
+    }).exec()
   }
 }
 
