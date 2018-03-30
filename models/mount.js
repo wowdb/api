@@ -1,18 +1,22 @@
 const mongoose = require('mongoose')
 
 const schema = new mongoose.Schema({
-  id: Number,
   name: String,
-  description: String,
   icon: String,
-  itemLevel: Number
+  spellId: Number,
+  creatureId: Number,
+  itemId: Number,
+  isGround: Boolean,
+  isFlying: Boolean,
+  isAquatic: Boolean,
+  isJumping: Boolean
 })
 
 schema.index({
   name: 'text'
 })
 
-class Item {
+class Mount {
   static search(query, skip = 0, limit = 20) {
     return this.find({
       $text: {
@@ -25,7 +29,7 @@ class Item {
   }
 
   get quality() {
-    const quality = this.getValue('quality')
+    const quality = this.getValue('qualityId')
 
     switch (quality) {
       case 0:
@@ -55,6 +59,6 @@ class Item {
   }
 }
 
-schema.loadClass(Item)
+schema.loadClass(Mount)
 
-module.exports = mongoose.model('Item', schema)
+module.exports = mongoose.model('Mount', schema)

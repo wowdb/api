@@ -1,18 +1,17 @@
 const mongoose = require('mongoose')
 
 const schema = new mongoose.Schema({
-  id: Number,
+  creatureId: Number,
   name: String,
-  description: String,
-  icon: String,
-  itemLevel: Number
+  family: String,
+  icon: String
 })
 
 schema.index({
   name: 'text'
 })
 
-class Item {
+class Pet {
   static search(query, skip = 0, limit = 20) {
     return this.find({
       $text: {
@@ -25,7 +24,7 @@ class Item {
   }
 
   get quality() {
-    const quality = this.getValue('quality')
+    const quality = this.getValue('qualityId')
 
     switch (quality) {
       case 0:
@@ -55,6 +54,6 @@ class Item {
   }
 }
 
-schema.loadClass(Item)
+schema.loadClass(Pet)
 
-module.exports = mongoose.model('Item', schema)
+module.exports = mongoose.model('Pet', schema)

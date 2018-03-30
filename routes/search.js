@@ -1,4 +1,12 @@
-const { Achievement, Item, Quest } = require('../models')
+const {
+  Achievement,
+  Boss,
+  Item,
+  Mount,
+  Pet,
+  Quest,
+  Zone
+} = require('../models')
 const { results } = require('../schemas')
 
 module.exports = {
@@ -10,12 +18,20 @@ module.exports = {
 
     const achievements = await Achievement.search(query)
     const items = await Item.search(query)
+    const mounts = await Mount.search(query)
+    const npcs = await Boss.search(query)
+    const pets = await Pet.search(query)
     const quests = await Quest.search(query)
+    const zones = await Zone.search(query)
 
     return {
       achievements,
       items,
-      quests
+      mounts,
+      npcs,
+      pets,
+      quests,
+      zones
     }
   }
 }

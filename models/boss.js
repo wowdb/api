@@ -2,18 +2,17 @@ const mongoose = require('mongoose')
 
 const schema = new mongoose.Schema({
   id: Number,
-  title: String,
-  category: String,
-  level: Number,
-  reqLevel: Number
+  name: String,
+  description: String,
+  zoneId: Number,
+  journalId: Number
 })
 
 schema.index({
-  title: 'text',
-  category: 'text'
+  name: 'text'
 })
 
-class Quest {
+class Boss {
   static search(query, skip = 0, limit = 20) {
     return this.find({
       $text: {
@@ -26,6 +25,6 @@ class Quest {
   }
 }
 
-schema.loadClass(Quest)
+schema.loadClass(Boss)
 
-module.exports = mongoose.model('Quest', schema)
+module.exports = mongoose.model('Boss', schema)

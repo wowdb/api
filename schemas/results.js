@@ -46,6 +46,69 @@ module.exports = {
             }
           }
         },
+        mounts: {
+          type: 'array',
+          items: {
+            type: 'object',
+            properties: {
+              spellId: {
+                type: 'number'
+              },
+              creatureId: {
+                type: 'number'
+              },
+              itemId: {
+                type: 'number'
+              },
+              name: {
+                type: 'string'
+              },
+              icon: {
+                type: 'string'
+              },
+              quality: {
+                type: 'string'
+              }
+            }
+          }
+        },
+        npcs: {
+          type: 'array',
+          items: {
+            type: 'object',
+            properties: {
+              id: {
+                type: 'number'
+              },
+              name: {
+                type: 'string'
+              }
+            }
+          }
+        },
+        pets: {
+          type: 'array',
+          items: {
+            type: 'object',
+            properties: {
+              creatureId: {
+                type: 'number'
+              },
+              name: {
+                type: 'string'
+              },
+              family: {
+                type: 'string'
+              },
+              icon: {
+                type: 'string'
+              },
+              quality: {
+                type: 'string'
+              }
+            }
+          }
+        },
         quests: {
           type: 'array',
           items: {
@@ -59,6 +122,20 @@ module.exports = {
               },
               reqLevel: {
                 type: 'number'
+              }
+            }
+          }
+        },
+        zones: {
+          type: 'array',
+          items: {
+            type: 'object',
+            properties: {
+              id: {
+                type: 'number'
+              },
+              name: {
+                type: 'string'
               }
             }
           }
