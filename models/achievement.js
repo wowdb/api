@@ -9,8 +9,7 @@ const schema = new mongoose.Schema({
 })
 
 schema.index({
-  title: 'text',
-  description: 'text'
+  title: 'text'
 })
 
 class Achievement {
