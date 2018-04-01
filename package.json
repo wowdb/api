@@ -40,8 +40,8 @@
     "eslint-config-prettier": "latest",
     "eslint-plugin-prettier": "latest",
     "husky": "^0.14.3",
-    "lint-staged": "^7.0.0",
-    "nodemon": "^1.17.2",
+    "lint-staged": "^7.0.2",
+    "nodemon": "^1.17.3",
     "nyc": "^11.6.0",
     "prettier": "^1.11.1",
     "xo": "latest"
