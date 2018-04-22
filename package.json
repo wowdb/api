@@ -1,6 +1,5 @@
 {
   "name": "bigglesworth-api",
-  "version": "0.0.1",
   "description": "Mr Bigglesworth helps you find World of Warcraft information on the go",
   "private": true,
   "license": "MIT",
