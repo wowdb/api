@@ -4,9 +4,13 @@ const cors = require('cors')()
 const fastify = require('fastify')()
 const mongoose = require('mongoose')
 
-mongoose.connect(MONGO_URI, {
-  dbName: MONGO_DB
-})
+mongoose.connect(
+  MONGO_URI,
+  {
+    dbName: MONGO_DB,
+    useNewUrlParser: true
+  }
+)
 mongoose.Promise = global.Promise
 
 fastify.use(cors)
