@@ -1,13 +1,16 @@
 const mongoose = require('mongoose')
 
 const schema = new mongoose.Schema({
-  id: Number,
-  title: String,
   description: String,
   icon: String,
-  points: Number
+  id: Number,
+  points: Number,
+  title: String
 })
 
+schema.index({
+  id: 1
+})
 schema.index({
   title: 'text'
 })

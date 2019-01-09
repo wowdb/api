@@ -1,16 +1,18 @@
 const mongoose = require('mongoose')
 
 const schema = new mongoose.Schema({
-  id: Number,
-  title: String,
   category: String,
+  id: Number,
   level: Number,
-  reqLevel: Number
+  reqLevel: Number,
+  title: String
 })
 
 schema.index({
-  title: 'text',
-  category: 'text'
+  id: 1
+})
+schema.index({
+  title: 'text'
 })
 
 class Quest {

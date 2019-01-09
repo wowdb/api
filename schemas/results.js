@@ -3,6 +3,38 @@ module.exports = {
     200: {
       type: 'object',
       properties: {
+        results: {
+          type: 'array',
+          items: {
+            type: 'object',
+            properties: {
+              id: {
+                type: 'number'
+              },
+              name: {
+                type: 'string'
+              },
+              icon: {
+                type: 'string'
+              },
+              itemLevel: {
+                type: 'number'
+              },
+              points: {
+                type: 'number'
+              },
+              quality: {
+                type: 'string'
+              },
+              requiredLevel: {
+                type: 'number'
+              },
+              type: {
+                type: 'string'
+              }
+            }
+          }
+        },
         achievements: {
           type: 'array',
           items: {

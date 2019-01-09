@@ -1,13 +1,17 @@
 const mongoose = require('mongoose')
 
 const schema = new mongoose.Schema({
-  id: Number,
-  name: String,
   description: String,
   icon: String,
-  itemLevel: Number
+  id: Number,
+  itemLevel: Number,
+  name: String,
+  requiredLevel: Number
 })
 
+schema.index({
+  id: 1
+})
 schema.index({
   name: 'text'
 })

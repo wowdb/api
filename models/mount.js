@@ -1,17 +1,20 @@
 const mongoose = require('mongoose')
 
 const schema = new mongoose.Schema({
-  name: String,
-  icon: String,
-  spellId: Number,
   creatureId: Number,
-  itemId: Number,
-  isGround: Boolean,
-  isFlying: Boolean,
+  icon: String,
   isAquatic: Boolean,
-  isJumping: Boolean
+  isFlying: Boolean,
+  isGround: Boolean,
+  isJumping: Boolean,
+  itemId: Number,
+  name: String,
+  spellId: Number
 })
 
+schema.index({
+  id: 1
+})
 schema.index({
   name: 'text'
 })

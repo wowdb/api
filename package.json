@@ -20,6 +20,7 @@
   "dependencies": {
     "cors": "^2.8.5",
     "fastify": "^1.13.3",
+    "fuse.js": "^3.3.0",
     "mongoose": "^5.4.2",
     "redis": "^2.8.0",
     "request": "^2.88.0",
