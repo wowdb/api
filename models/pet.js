@@ -17,8 +17,6 @@ schema.index({
 schema.set('toJSON', {
   transform(doc, ret) {
     ret.quality = doc.quality
-
-    return ret
   }
 })
 
