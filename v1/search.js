@@ -14,7 +14,9 @@ module.exports = {
   schema: results,
   url: '/search',
   async handler(request) {
-    const { query: { query } } = request
+    const {
+      query: { query }
+    } = request
 
     const achievements = await Achievement.search(query)
     const items = await Item.search(query)

@@ -14,6 +14,14 @@ schema.index({
   name: 'text'
 })
 
+schema.set('toJSON', {
+  transform(doc, ret) {
+    ret.quality = doc.quality
+
+    return ret
+  }
+})
+
 class Pet {
   static search(query) {
     return this.find({
