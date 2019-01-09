@@ -15,7 +15,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon --exec 'node -r dotenv/config' index.js",
-    "start": "node -r index.js"
+    "start": "node index.js"
   },
   "dependencies": {
     "cors": "^2.8.5",
