@@ -8,6 +8,7 @@ const quests = require('./quests')
 const zones = require('./zones')
 
 const search = require('./search')
+const tooltip = require('./tooltip')
 
 module.exports = (fastify, options, next) => {
   fastify.route(achievements)
@@ -20,6 +21,7 @@ module.exports = (fastify, options, next) => {
   fastify.route(zones)
 
   fastify.route(search)
+  fastify.route(tooltip)
 
   next()
 }
