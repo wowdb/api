@@ -8,13 +8,6 @@ const schema = new mongoose.Schema({
   title: String
 })
 
-schema.index({
-  id: 1
-})
-schema.index({
-  title: 'text'
-})
-
 class Quest {
   static search(query) {
     return this.find({

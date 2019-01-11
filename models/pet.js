@@ -7,13 +7,6 @@ const schema = new mongoose.Schema({
   name: String
 })
 
-schema.index({
-  id: 1
-})
-schema.index({
-  name: 'text'
-})
-
 schema.set('toJSON', {
   transform(doc, ret) {
     ret.quality = doc.quality

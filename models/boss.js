@@ -8,13 +8,6 @@ const schema = new mongoose.Schema({
   zoneId: Number
 })
 
-schema.index({
-  id: 1
-})
-schema.index({
-  name: 'text'
-})
-
 class Boss {
   static search(query) {
     return this.find({

@@ -9,13 +9,6 @@ const schema = new mongoose.Schema({
   name: String
 })
 
-schema.index({
-  id: 1
-})
-schema.index({
-  name: 'text'
-})
-
 class Zone {
   static search(query) {
     return this.find({
