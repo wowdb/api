@@ -1,9 +1,9 @@
 const comments = require('./comments')
-const faq = require('./faq')
+const meta = require('./meta')
 const results = require('./results')
 
 module.exports = {
   comments,
-  faq,
+  meta,
   results
 }

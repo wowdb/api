@@ -5,9 +5,11 @@ const {
   FAQ,
   ItemClass
 } = require('../models')
+const { meta } = require('../schemas')
 
 module.exports = {
   method: 'GET',
+  schema: meta,
   url: '/meta',
   async handler() {
     const [
