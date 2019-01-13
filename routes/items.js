@@ -1,4 +1,4 @@
-const { fetchComments } = require('../lib')
+const { Comments } = require('../lib')
 const { Item } = require('../models')
 
 module.exports = {
@@ -11,11 +11,9 @@ module.exports = {
 
     const item = await Item.findOne({
       id
-    }).select({
-      _id: 0
     })
 
-    const comments = await fetchComments(id, 'item')
+    const comments = await Comments.fetch(id, 'item')
 
     return {
       item,

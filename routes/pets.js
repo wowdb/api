@@ -1,4 +1,4 @@
-const { fetchComments } = require('../lib')
+const { Comments } = require('../lib')
 const { Pet } = require('../models')
 
 module.exports = {
@@ -11,11 +11,9 @@ module.exports = {
 
     const pet = await Pet.findOne({
       creatureId: id
-    }).select({
-      _id: 0
     })
 
-    const comments = await fetchComments(id, 'npc')
+    const comments = await Comments.fetch(id, 'npc')
 
     return {
       pet,

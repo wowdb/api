@@ -1,1 +1,5 @@
-Mr Bigglesworth helps you find World of Warcraft information on the go
+# WoWdb api
+
+### Todo
+
+- [ ] Write tests

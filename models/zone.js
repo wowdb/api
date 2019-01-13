@@ -9,16 +9,4 @@ const schema = new mongoose.Schema({
   name: String
 })
 
-class Zone {
-  static search(query) {
-    return this.find({
-      $text: {
-        $search: query
-      }
-    }).exec()
-  }
-}
-
-schema.loadClass(Zone)
-
 module.exports = mongoose.model('Zone', schema)

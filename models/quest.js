@@ -8,16 +8,4 @@ const schema = new mongoose.Schema({
   title: String
 })
 
-class Quest {
-  static search(query) {
-    return this.find({
-      $text: {
-        $search: query
-      }
-    }).exec()
-  }
-}
-
-schema.loadClass(Quest)
-
 module.exports = mongoose.model('Quest', schema)

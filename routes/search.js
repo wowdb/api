@@ -1,4 +1,4 @@
-const { search } = require('../lib')
+const { Search } = require('../lib')
 const { results } = require('../schemas')
 
 module.exports = {
@@ -10,7 +10,7 @@ module.exports = {
       query: { query }
     } = request
 
-    const results = await search.search(query)
+    const results = await Search.search(query)
 
     return {
       results

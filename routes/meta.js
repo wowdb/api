@@ -2,7 +2,7 @@ const {
   CharacterClass,
   CharacterRace,
   Expansion,
-  FAQ,
+  Faq,
   ItemClass
 } = require('../models')
 const { meta } = require('../schemas')
@@ -16,16 +16,16 @@ module.exports = {
       characterClasses,
       characterRaces,
       expansions,
-      faq,
-      itemClasses
+      itemClasses,
+      faq
     ] = await Promise.all([
       CharacterClass.find(),
       CharacterRace.find(),
       Expansion.find(),
-      FAQ.find().sort({
+      ItemClass.find(),
+      Faq.find().sort({
         order: 1
-      }),
-      ItemClass.find()
+      })
     ])
 
     return {

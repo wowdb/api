@@ -11,4 +11,4 @@ const schema = new mongoose.Schema(
   }
 )
 
-module.exports = mongoose.model('FAQ', schema)
+module.exports = mongoose.model('Faq', schema)

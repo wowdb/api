@@ -8,16 +8,4 @@ const schema = new mongoose.Schema({
   title: String
 })
 
-class Achievement {
-  static search(query) {
-    return this.find({
-      $text: {
-        $search: query
-      }
-    }).exec()
-  }
-}
-
-schema.loadClass(Achievement)
-
 module.exports = mongoose.model('Achievement', schema)

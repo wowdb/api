@@ -18,12 +18,10 @@ const server = fastify()
 
 server.use(cors())
 
-const v1 = require('./v1')
-const v2 = require('./v2')
+const routes = require('./routes')
 
-server.register(v1)
-server.register(v2, {
-  prefix: 'v2'
+server.register(routes, {
+  prefix: 'v1'
 })
 
 server.listen(PORT, '0.0.0.0', err => {

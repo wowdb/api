@@ -1,6 +1,5 @@
 const meta = require('./meta')
 const search = require('./search')
-const tooltip = require('./tooltip')
 
 const achievements = require('./achievements')
 const bosses = require('./bosses')
@@ -13,7 +12,6 @@ const zones = require('./zones')
 module.exports = (fastify, options, next) => {
   fastify.route(meta)
   fastify.route(search)
-  fastify.route(tooltip)
 
   fastify.route(achievements)
   fastify.route(bosses)

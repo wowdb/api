@@ -1,7 +1,7 @@
 const CharacterClass = require('./character-class')
 const CharacterRace = require('./character-race')
 const Expansion = require('./expansion')
-const FAQ = require('./faq')
+const Faq = require('./faq')
 const ItemClass = require('./item-class')
 
 const Achievement = require('./achievement')
@@ -16,7 +16,7 @@ module.exports = {
   CharacterClass,
   CharacterRace,
   Expansion,
-  FAQ,
+  Faq,
   ItemClass,
 
   Achievement,
