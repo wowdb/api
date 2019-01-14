@@ -7,6 +7,7 @@ const items = require('./items')
 const mounts = require('./mounts')
 const pets = require('./pets')
 const quests = require('./quests')
+const spells = require('./spells')
 const zones = require('./zones')
 
 module.exports = (fastify, options, next) => {
@@ -19,6 +20,7 @@ module.exports = (fastify, options, next) => {
   fastify.route(mounts)
   fastify.route(pets)
   fastify.route(quests)
+  fastify.route(spells)
   fastify.route(zones)
 
   next()
