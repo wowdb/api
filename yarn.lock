@@ -2808,6 +2808,11 @@ xtend@~4.0.1:
   resolved "https://registry.yarnpkg.com/xtend/-/xtend-4.0.1.tgz#a5c6d532be656e23db820efb943a1f04998d63af"
   integrity sha1-pcbVMr5lbiPbgg77lDofBJmNY68=
 
+ya-bbcode@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/ya-bbcode/-/ya-bbcode-1.0.5.tgz#4105515b1abc9fcdfe457ed72a578be84a507857"
+  integrity sha512-pJmQFzVdbsHWjlInh1kTDFxORjVxzhmjRbXTUmUQAdgPhTxolP9C8rFTsywPx1rGRWanear0votfX+9X/U7sIA==
+
 yallist@^2.1.2:
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/yallist/-/yallist-2.1.2.tgz#1c11f9218f076089a47dd512f93c6699a6a81d52"
