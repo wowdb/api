@@ -20,12 +20,10 @@
   "dependencies": {
     "cors": "^2.8.5",
     "fastify": "^1.13.4",
-    "fuse.js": "^3.3.0",
     "mongoose": "^5.4.5",
     "redis": "^2.8.0",
     "request": "^2.88.0",
-    "request-promise-native": "^1.0.5",
-    "ya-bbcode": "^1.0.5"
+    "request-promise-native": "^1.0.5"
   },
   "devDependencies": {
     "dotenv": "^6.2.0",

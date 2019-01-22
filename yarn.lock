@@ -878,11 +878,6 @@ fsevents@^1.2.2:
     nan "^2.9.2"
     node-pre-gyp "^0.10.0"
 
-fuse.js@^3.3.0:
-  version "3.3.0"
-  resolved "https://registry.yarnpkg.com/fuse.js/-/fuse.js-3.3.0.tgz#1e4fe172a60687230fb54a5cb247eb96e2e7e885"
-  integrity sha512-ESBRkGLWMuVkapqYCcNO1uqMg5qbCKkgb+VS6wsy17Rix0/cMS9kSOZoYkjH8Ko//pgJ/EEGu0GTjk2mjX2LGQ==
-
 gauge@~2.7.3:
   version "2.7.4"
   resolved "https://registry.yarnpkg.com/gauge/-/gauge-2.7.4.tgz#2c03405c7538c39d7eb37b317022e325fb018bf7"
@@ -2840,11 +2835,6 @@ xtend@~4.0.1:
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/xtend/-/xtend-4.0.1.tgz#a5c6d532be656e23db820efb943a1f04998d63af"
   integrity sha1-pcbVMr5lbiPbgg77lDofBJmNY68=
-
-ya-bbcode@^1.0.5:
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/ya-bbcode/-/ya-bbcode-1.0.5.tgz#4105515b1abc9fcdfe457ed72a578be84a507857"
-  integrity sha512-pJmQFzVdbsHWjlInh1kTDFxORjVxzhmjRbXTUmUQAdgPhTxolP9C8rFTsywPx1rGRWanear0votfX+9X/U7sIA==
 
 yallist@^2.1.2:
   version "2.1.2"
