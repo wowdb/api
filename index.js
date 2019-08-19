@@ -21,7 +21,7 @@ server.register(routes, {
   prefix: 'v1'
 })
 
-server.listen(PORT, err => {
+server.listen(PORT, '0.0.0.0', err => {
   if (err) {
     throw err
   }
