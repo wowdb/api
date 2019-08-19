@@ -5,14 +5,11 @@ const fastify = require('fastify')
 const mongoose = require('mongoose')
 
 mongoose.Promise = global.Promise
-mongoose.connect(
-  MONGO_URI,
-  {
-    autoIndex: false,
-    dbName: MONGO_DB,
-    useNewUrlParser: true
-  }
-)
+mongoose.connect(MONGO_URI, {
+  autoIndex: false,
+  dbName: MONGO_DB,
+  useNewUrlParser: true
+})
 
 const server = fastify()
 
@@ -24,7 +21,7 @@ server.register(routes, {
   prefix: 'v1'
 })
 
-server.listen(PORT, '0.0.0.0', err => {
+server.listen(PORT, err => {
   if (err) {
     throw err
   }
