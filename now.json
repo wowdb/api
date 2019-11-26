@@ -1,0 +1,5 @@
+{
+  "version": 2,
+  "name": "wowdb",
+  "regions": ["dub1", "hnd1", "sfo1"]
+}

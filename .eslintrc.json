@@ -1,0 +1,23 @@
+{
+  "extends": [
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "prettier/@typescript-eslint"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "plugins": [
+    "@typescript-eslint",
+    "react",
+    "sort-keys-fix",
+    "simple-import-sort",
+    "prettier"
+  ],
+  "rules": {
+    "comma-dangle": "off",
+    "no-shadow": "off",
+    "prettier/prettier": "error",
+    "semi": "off",
+    "simple-import-sort/sort": "error",
+    "sort-keys-fix/sort-keys-fix": "error"
+  }
+}
