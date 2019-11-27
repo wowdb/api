@@ -1,4 +1,4 @@
-export type WowheadResult = {
+export interface WowheadResult {
   description?: string
   icon?: string
   id: number
@@ -7,20 +7,20 @@ export type WowheadResult = {
   namealliance?: string
   namehorde?: string
   pieces?: number[]
-  points?: string
+  points?: number
   portraitalliance?: string
   portraithorde?: string
-  quality?: string
-  reagents?: string[]
+  quality?: number
+  reagents?: number[][]
 }
 
-export type WowheadResults = {
+export interface WowheadResults {
   template: string
   type: string
   data: WowheadResult[]
 }
 
-export type WowheadComment = {
+export interface WowheadComment {
   body: string
   date: string
   id: number

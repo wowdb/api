@@ -62,17 +62,28 @@ class Wowhead {
                 name: name && name.replace('%s', '<Name>'),
                 namealliance,
                 namehorde,
-                pieces: pieces && pieces.map(id => meta[id]),
+                pieces:
+                  pieces &&
+                  pieces
+                    .map(id => meta[id])
+                    .map(({ icon }) => ({
+                      icon
+                    })),
                 points,
                 portraitalliance,
                 portraithorde,
                 quality,
                 reagents:
                   reagents &&
-                  reagents.map(([id, quantity]) => ({
-                    ...meta[id],
-                    quantity
-                  }))
+                  reagents
+                    .map(([id, quantity]) => ({
+                      ...meta[id],
+                      quantity
+                    }))
+                    .map(({ icon, quantity }) => ({
+                      icon,
+                      quantity
+                    }))
               })
             ),
             template,
