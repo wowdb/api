@@ -8,6 +8,23 @@ class BBCode {
   parse(body: string, meta: WowheadMeta): string {
     const parser = new YaBBCode()
 
+    parser
+      .registerTag('ol', {
+        close: '</ol>',
+        open: () => `<ol>`,
+        type: 'replace'
+      })
+      .registerTag('ul', {
+        close: '</ul>',
+        open: () => `<ul>`,
+        type: 'replace'
+      })
+      .registerTag('li', {
+        close: '</li>',
+        open: () => `<li>`,
+        type: 'replace'
+      })
+
     const normal = [
       'achievement',
       'pet-ability',
