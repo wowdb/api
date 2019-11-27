@@ -127,18 +127,20 @@ class Wowhead {
       return json.map(({ id, body, user, rating, date, replies }) => {
         return {
           body: bbcode.parse(body, meta),
+          comments:
+            replies &&
+            replies.map(
+              ({ commentid, body, username, rating, creationdate }) => ({
+                body: bbcode.parse(body, meta),
+                date: creationdate,
+                id: commentid,
+                rating,
+                user: username
+              })
+            ),
           date,
           id,
           rating,
-          replies:
-            replies &&
-            replies.map(({ id, body, user, rating, date }) => ({
-              body: bbcode.parse(body, meta),
-              date,
-              id,
-              rating,
-              user
-            })),
           user
         }
       })

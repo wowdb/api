@@ -22,11 +22,20 @@ export interface WowheadResults {
 
 export interface WowheadComment {
   body: string
+  comments?: WowheadComment[]
   date: string
   id: number
   rating: number
-  replies?: WowheadComment[]
+  replies?: WowheadReply[]
   user: string
+}
+
+export interface WowheadReply {
+  body: string
+  commentid: number
+  creationdate: string
+  rating: number
+  username: string
 }
 
 export type WowheadMeta = {
