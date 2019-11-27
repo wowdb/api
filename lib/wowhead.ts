@@ -98,9 +98,9 @@ class Wowhead {
     const comments = lines.find(line => line.indexOf('var lv_comments0') === 0)
 
     if (comments) {
-      const data = JSON.parse(comments.slice(19, -1)) as WowheadComment[]
+      const json = JSON.parse(comments.slice(19, -1)) as WowheadComment[]
 
-      return data.map(({ id, body, user, rating, date, replies }) => {
+      const data = json.map(({ id, body, user, rating, date, replies }) => {
         return {
           body: bbcode.parse(body, meta),
           date,
@@ -108,16 +108,22 @@ class Wowhead {
           rating,
           replies:
             replies &&
-            replies.map(({ id, body, user, rating, date }) => ({
-              body: bbcode.parse(body, meta),
-              date,
-              id,
-              rating,
-              user
-            })),
+            orderBy(
+              replies.map(({ id, body, user, rating, date }) => ({
+                body: bbcode.parse(body, meta),
+                date,
+                id,
+                rating,
+                user
+              })),
+              ['date', 'rating'],
+              ['desc', 'desc']
+            ),
           user
         }
       })
+
+      return orderBy(data, ['date', 'rating'], ['desc', 'desc'])
     }
 
     return []
@@ -127,7 +133,7 @@ class Wowhead {
     return lines
       .filter(line => line.includes('WH.Gatherer.addData'))
       .map(line => {
-        const matches = line.match(/WH\.Gatherer\.addData\(\d, \d, (.*?)\);/)
+        const matches = line.match(/WH\.Gatherer\.addData\(\d+, \d+, (.*?)\);/)
 
         if (matches) {
           const [, data] = matches
