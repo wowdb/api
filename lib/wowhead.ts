@@ -100,7 +100,7 @@ class Wowhead {
     if (comments) {
       const json = JSON.parse(comments.slice(19, -1)) as WowheadComment[]
 
-      const data = json.map(({ id, body, user, rating, date, replies }) => {
+      return json.map(({ id, body, user, rating, date, replies }) => {
         return {
           body: bbcode.parse(body, meta),
           date,
@@ -108,22 +108,16 @@ class Wowhead {
           rating,
           replies:
             replies &&
-            orderBy(
-              replies.map(({ id, body, user, rating, date }) => ({
-                body: bbcode.parse(body, meta),
-                date,
-                id,
-                rating,
-                user
-              })),
-              ['date', 'rating'],
-              ['desc', 'desc']
-            ),
+            replies.map(({ id, body, user, rating, date }) => ({
+              body: bbcode.parse(body, meta),
+              date,
+              id,
+              rating,
+              user
+            })),
           user
         }
       })
-
-      return orderBy(data, ['date', 'rating'], ['desc', 'desc'])
     }
 
     return []

@@ -83,9 +83,19 @@ class BBCode {
       })
     )
 
-    const data = parser.parse(body)
+    body = body
+      .replace(/\[url=(.*?)\](.*?)\[\/url\]/g, '<a href="$1">$2</a>')
+      .replace(/\[url=(.*?)\]/g, '<a href="$1">$1</a>')
 
-    return linkifyHtml(data, {
+    const parsed = parser.parse(body)
+
+    const content = parsed
+      .replace(/<br\/>/g, '<br>')
+      .replace(/(<br>)+/gm, '<br>')
+      .replace(/br><li/g, 'li')
+      .replace(/li><br/g, 'li')
+
+    return linkifyHtml(content, {
       className: '',
       target: undefined
     })
