@@ -33,7 +33,10 @@ class Wowhead {
             JSON.parse(`[${content}]`),
             'searchpopularity',
             'desc'
-          ) as WowheadResult[]
+          ).map(data => ({
+            ...data,
+            ...meta[data.id]
+          })) as WowheadResult[]
 
           return {
             data: data.map(
