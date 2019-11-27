@@ -87,8 +87,18 @@ class Wowhead {
     type: string,
     classic = false
   ): Promise<WowheadComment[]> {
+    let separator = '='
+
+    if (
+      ['azerite-essence', 'azerite-essence-power', 'storyline'].includes(type)
+    ) {
+      separator = '/'
+    }
+
     const { data } = await axios.get<string>(
-      `https://${classic ? 'classic' : 'www'}.wowhead.com/${type}=${id}`
+      `https://${
+        classic ? 'classic' : 'www'
+      }.wowhead.com/${type}${separator}${id}`
     )
 
     const lines = data.split('\n')
