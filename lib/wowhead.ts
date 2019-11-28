@@ -100,7 +100,10 @@ class Wowhead {
     id: string,
     type: string,
     classic = false
-  ): Promise<WowheadComment[]> {
+  ): Promise<{
+    comments: WowheadComment[]
+    title: string
+  }> {
     let separator = '='
 
     if (
@@ -119,34 +122,52 @@ class Wowhead {
 
     const meta = this.meta(lines)
 
+    const info = lines.find(line => line.includes('g_pageInfo'))
+
+    let title = ''
+
+    if (info) {
+      const matches = info.match(/name: "(.*?)"/)
+
+      if (matches) {
+        title = matches[1]
+      }
+    }
+
     const comments = lines.find(line => line.indexOf('var lv_comments0') === 0)
 
     if (comments) {
       const json = JSON.parse(comments.slice(19, -1)) as WowheadComment[]
 
-      return json.map(({ id, body, user, rating, date, replies }) => {
-        return {
-          body: bbcode.parse(body, meta),
-          comments:
-            replies &&
-            replies.map(
-              ({ commentid, body, username, rating, creationdate }) => ({
-                body: bbcode.parse(body, meta),
-                date: creationdate,
-                id: commentid,
-                rating,
-                user: username
-              })
-            ),
-          date,
-          id,
-          rating,
-          user
-        }
-      })
+      return {
+        title,
+        comments: json.map(({ id, body, user, rating, date, replies }) => {
+          return {
+            body: bbcode.parse(body, meta),
+            comments:
+              replies &&
+              replies.map(
+                ({ commentid, body, username, rating, creationdate }) => ({
+                  body: bbcode.parse(body, meta),
+                  date: creationdate,
+                  id: commentid,
+                  rating,
+                  user: username
+                })
+              ),
+            date,
+            id,
+            rating,
+            user
+          }
+        })
+      }
     }
 
-    return []
+    return {
+      title,
+      comments: []
+    }
   }
 
   meta(lines: string[]): WowheadMeta {
