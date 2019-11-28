@@ -99,7 +99,6 @@ class BBCode {
 
     const content = parsed
       .replace(/<br\/>/g, '<br>')
-      .replace(/(<br>)+/gm, '<br>')
       .replace(/br><li/g, 'li')
       .replace(/li><br/g, 'li')
 
