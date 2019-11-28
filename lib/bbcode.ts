@@ -25,6 +25,8 @@ class BBCode {
         type: 'replace'
       })
 
+    body = body.replace(/\[([\w-]+)=(\d+) domain=(\w+)\]/g, '[$1=$2,domain=$3]')
+
     const normal = [
       'achievement',
       'pet-ability',
@@ -61,11 +63,14 @@ class BBCode {
 
     normal.forEach(type =>
       parser.registerTag(type, {
-        open: attr =>
-          `<a href="https://wowhead.com/${type}=${attr}">${get(
+        open: attr => {
+          const [id, domain = 'www'] = attr.split(',')
+
+          return `<a href="https://${domain}.wowhead.com/${type}=${id}">${get(
             meta,
-            `${attr}.name_enus`
-          )}</a>`,
+            `${id}.name_enus`
+          )}</a>`
+        },
         type: 'replace'
       })
     )
@@ -74,11 +79,14 @@ class BBCode {
 
     other.forEach(type =>
       parser.registerTag(type, {
-        open: attr =>
-          `<a href="https://wowhead.com/${type}/${attr}">${get(
+        open: attr => {
+          const [id, domain = 'www'] = attr.split(',')
+
+          return `<a href="https://${domain}.wowhead.com/${type}=${id}">${get(
             meta,
-            `${attr}.name_enus`
-          )}</a>`,
+            `${id}.name_enus`
+          )}</a>`
+        },
         type: 'replace'
       })
     )
