@@ -140,7 +140,6 @@ class Wowhead {
       const json = JSON.parse(comments.slice(19, -1)) as WowheadComment[]
 
       return {
-        title,
         comments: json.map(({ id, body, user, rating, date, replies }) => {
           return {
             body: bbcode.parse(body, meta),
@@ -160,13 +159,14 @@ class Wowhead {
             rating,
             user
           }
-        })
+        }),
+        title
       }
     }
 
     return {
-      title,
-      comments: []
+      comments: [],
+      title
     }
   }
 
