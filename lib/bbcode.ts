@@ -25,7 +25,7 @@ class BBCode {
         type: 'replace'
       })
 
-    body = body.replace(/\[([\w-]+)=(\d+) domain=(\w+)\]/g, '[$1=$2,domain=$3]')
+    body = body.replace(/\[([\w-]+)=(\d+) domain=(\w+)\]/g, '[$1=$2,$3]')
 
     const normal = [
       'achievement',
