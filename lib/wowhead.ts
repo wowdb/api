@@ -127,10 +127,16 @@ class Wowhead {
     let title = ''
 
     if (info) {
-      const matches = info.match(/name: "(.*?)"/)
+      if (info.includes('"name"')) {
+        const json = JSON.parse(info.trim().slice(17, -1))
 
-      if (matches) {
-        title = matches[1]
+        title = json.name
+      } else {
+        const matches = info.match(/name: "(.*?)"/)
+
+        if (matches) {
+          title = matches[1]
+        }
       }
     }
 
