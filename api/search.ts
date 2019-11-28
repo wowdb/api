@@ -10,6 +10,8 @@ export default async (
 
   const results = await wowhead.search(query as string, classic === 'true')
 
+  response.setHeader('s-maxage', 3600)
+
   response.json({
     results
   })

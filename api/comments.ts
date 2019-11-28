@@ -14,5 +14,7 @@ export default async (
     classic === 'true'
   )
 
+  response.setHeader('s-maxage', 3600)
+
   response.json(comments)
 }
