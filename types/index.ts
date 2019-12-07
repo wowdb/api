@@ -47,7 +47,7 @@ export interface WowheadMeta {
   }
 }
 
-export interface Professions {
+export interface Skills {
   [id: number]: {
     icon?: string
     id: number

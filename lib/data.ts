@@ -1,6 +1,6 @@
-import { Professions } from '../types'
+import { Skills } from '../types'
 
-export const professions: Professions = {
+export const skills: Skills = {
   43: {
     icon: 'ability_meleedamage',
     id: 43,

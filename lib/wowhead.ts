@@ -8,7 +8,7 @@ import {
   WowheadResults
 } from '../types'
 import { bbcode } from './bbcode'
-import { professions } from './data'
+import { skills } from './data'
 
 class Wowhead {
   async search(query: string, classic = false): Promise<WowheadResults[]> {
@@ -38,6 +38,8 @@ class Wowhead {
             ...data,
             ...meta[data.id]
           })) as WowheadResult[]
+
+          console.log(JSON.stringify(data, null, 2))
 
           return {
             data: data.map(
@@ -87,7 +89,7 @@ class Wowhead {
                       icon,
                       quantity
                     })),
-                skill: cat === 11 && skill && professions[skill[0]]
+                skill: cat === 11 && skill && skills[skill[0]]
               })
             ),
             template,
