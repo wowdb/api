@@ -1,4 +1,5 @@
 export interface WowheadResult {
+  cat?: number
   description?: string
   icon?: string
   id: number
@@ -12,6 +13,7 @@ export interface WowheadResult {
   portraithorde?: string
   quality?: number
   reagents?: number[][]
+  skill?: number[]
 }
 
 export interface WowheadResults {
@@ -38,9 +40,17 @@ export interface WowheadReply {
   username: string
 }
 
-export type WowheadMeta = {
+export interface WowheadMeta {
   [key: string]: {
     name_enus?: string
     icon?: string
+  }
+}
+
+export interface Professions {
+  [id: number]: {
+    icon?: string
+    id: number
+    name: string
   }
 }

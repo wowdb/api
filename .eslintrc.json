@@ -18,6 +18,12 @@
     "prettier/prettier": "error",
     "semi": "off",
     "simple-import-sort/sort": "error",
-    "sort-keys-fix/sort-keys-fix": "error"
+    "sort-keys-fix/sort-keys-fix": [
+      "error",
+      "asc",
+      {
+        "natural": true
+      }
+    ]
   }
 }
