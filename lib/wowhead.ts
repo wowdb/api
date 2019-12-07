@@ -64,32 +64,32 @@ class Wowhead {
                 icon,
                 id,
                 level,
-                name: name && name.replace('%s', '<Name>'),
+                name: name ? name.replace('%s', '<Name>') : undefined,
                 namealliance,
                 namehorde,
-                pieces:
-                  pieces &&
-                  pieces
-                    .map(id => meta[id])
-                    .map(({ icon }) => ({
-                      icon
-                    })),
+                pieces: pieces
+                  ? pieces
+                      .map(id => meta[id])
+                      .map(({ icon }) => ({
+                        icon
+                      }))
+                  : undefined,
                 points,
                 portraitalliance,
                 portraithorde,
                 quality,
-                reagents:
-                  reagents &&
-                  reagents
-                    .map(([id, quantity]) => ({
-                      ...meta[id],
-                      quantity
-                    }))
-                    .map(({ icon, quantity }) => ({
-                      icon,
-                      quantity
-                    })),
-                skill: cat === 11 && skill && skills[skill[0]]
+                reagents: reagents
+                  ? reagents
+                      .map(([id, quantity]) => ({
+                        ...meta[id],
+                        quantity
+                      }))
+                      .map(({ icon, quantity }) => ({
+                        icon,
+                        quantity
+                      }))
+                  : undefined,
+                skill: cat === 11 && skill ? skills[skill[0]] : undefined
               })
             ),
             template,
