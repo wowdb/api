@@ -8,7 +8,7 @@ import {
   WowheadResults
 } from '../types'
 import { bbcode } from './bbcode'
-import { skills } from './data'
+import { expansions, quests, skills, zones } from './data'
 
 class Wowhead {
   async search(query: string, classic = false): Promise<WowheadResults[]> {
@@ -39,15 +39,15 @@ class Wowhead {
             ...meta[data.id]
           })) as WowheadResult[]
 
-          console.log(JSON.stringify(data, null, 2))
-
           return {
             data: data.map(
               ({
                 cat,
                 description,
+                expansion,
                 icon,
                 id,
+                instance,
                 level,
                 name,
                 namealliance,
@@ -58,9 +58,12 @@ class Wowhead {
                 portraithorde,
                 quality,
                 reagents,
-                skill
+                reqlevel,
+                skill,
+                type
               }) => ({
                 description,
+                expansion: expansion ? expansions[expansion] : undefined,
                 icon,
                 id,
                 level,
@@ -89,7 +92,10 @@ class Wowhead {
                         quantity
                       }))
                   : undefined,
-                skill: cat === 11 && skill ? skills[skill[0]] : undefined
+                reqlevel,
+                skill: cat === 11 && skill ? skills[skill[0]] : undefined,
+                type: type ? quests[type] : undefined,
+                zone: instance ? zones[instance] : undefined
               })
             ),
             template,

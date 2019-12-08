@@ -1,8 +1,10 @@
 export interface WowheadResult {
   cat?: number
   description?: string
+  expansion?: number
   icon?: string
   id: number
+  instance?: number
   level?: string
   name?: string
   namealliance?: string
@@ -13,7 +15,9 @@ export interface WowheadResult {
   portraithorde?: string
   quality?: number
   reagents?: number[][]
+  reqlevel?: number
   skill?: number[]
+  type?: number
 }
 
 export interface WowheadResults {
@@ -47,10 +51,25 @@ export interface WowheadMeta {
   }
 }
 
+export interface Expansions {
+  [id: number]: {
+    icon: string
+    name: string
+  }
+}
+
+export interface Quests {
+  [id: number]: string
+}
+
 export interface Skills {
   [id: number]: {
     icon?: string
     id: number
     name: string
   }
+}
+
+export interface Zones {
+  [id: number]: string
 }

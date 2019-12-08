@@ -1,4 +1,104 @@
-import { Skills } from '../types'
+import { Expansions, Quests, Skills, Zones } from '../types'
+
+export const expansions: Expansions = {
+  1: {
+    icon: 'bc',
+    name: 'The Burning Crusade'
+  },
+  2: {
+    icon: 'wotlk',
+    name: 'Wrath of the Lich King'
+  },
+  3: {
+    icon: 'cata',
+    name: 'Cataclysm'
+  },
+  4: {
+    icon: 'mop',
+    name: 'Mists of Pandaria'
+  },
+  5: {
+    icon: 'warlords',
+    name: 'Warlords of Draenor'
+  },
+  6: {
+    icon: 'legion',
+    name: 'Legion'
+  },
+  7: {
+    icon: 'bfa',
+    name: 'Battle for Azeroth'
+  },
+  8: {
+    icon: 'shadowlands',
+    name: 'Shadowlands'
+  }
+}
+
+export const quests: Quests = {
+  1: 'Group',
+  21: 'Class',
+  41: 'PvP',
+  62: 'Raid',
+  81: 'Dungeon',
+  82: 'World Event',
+  83: 'Legendary',
+  84: 'Escort',
+  85: 'Heroic',
+  88: 'Raid (10)',
+  89: 'Raid (25)',
+  98: 'Scenario',
+  102: 'Account',
+  104: 'Side Quest',
+  107: 'Artifact',
+  109: 'World Quest',
+  110: 'Epic World Quest',
+  111: 'Elite World Quest',
+  112: 'Epic Elite World Quest',
+  113: 'PvP World Quest',
+  114: 'First Aid World Quest',
+  115: 'Battle Pet World Quest',
+  116: 'Blacksmithing World Quest',
+  117: 'Leatherworking World Quest',
+  118: 'Alchemy World Quest',
+  119: 'Herbalism World Quest',
+  120: 'Mining World Quest',
+  121: 'Tailoring World Quest',
+  122: 'Engineering World Quest',
+  123: 'Enchanting World Quest',
+  124: 'Skinning World Quest',
+  125: 'Jewelcrafting World Quest',
+  126: 'Inscription World Quest',
+  128: 'Emissary Quest',
+  129: 'Archaeology World Quest',
+  130: 'Fishing World Quest',
+  131: 'Cooking World Quest',
+  135: 'Rare World Quest',
+  136: 'Rare Elite World Quest',
+  137: 'Dungeon World Quest',
+  139: 'Legion Invasion World Quest',
+  140: 'Rated Reward',
+  141: 'Raid World Quest',
+  142: 'Legion Invasion Elite World Quest',
+  143: 'Legionfall Contribution',
+  144: 'Legionfall World Quest',
+  145: 'Legionfall Dungeon World Quest',
+  146: 'Legion Invasion World Quest Wrapper',
+  147: 'Warfront - Barrens',
+  148: 'Pickpocketing',
+  151: 'Magni World Quest - Azerite',
+  152: 'Tortollan World Quest - 8.0',
+  153: 'Warfront Contribution',
+  254: 'Island Quest',
+  255: 'War Mode PvP',
+  256: 'PvP Conquest',
+  259: 'Faction Assault World Quest',
+  260: 'Faction Assault Elite World Quest',
+  261: 'Island Weekly Quest',
+  263: 'Public Quest',
+  265: 'Hidden Quest',
+  266: 'Combat Ally Quest'
+}
 
 export const skills: Skills = {
   43: {
@@ -944,4 +1044,18 @@ export const skills: Skills = {
     id: 2734,
     name: 'Mount Equipment'
   }
+}
+
+export const zones: Zones = {
+  1: 'Transit',
+  2: 'Dungeon',
+  3: 'Raid',
+  4: 'Battleground',
+  5: 'Dungeon',
+  6: 'Arena',
+  7: 'Raid',
+  8: 'Raid',
+  9: 'Scenario',
+  10: 'Artifact Acquisition',
+  11: 'Class Hall'
 }
